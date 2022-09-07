@@ -1,5 +1,14 @@
-console.log(55);
+<<<<<<< HEAD
+import { Application } from "./shared/infrastructure/server/express.server";
+import config from "./shared/infrastructure/config";
+import { Database } from "./shared/infrastructure/database/mongo.database";
 
-console.log(55);
+const database = new Database();
 
-console.log(55);
+database.getDatabase(config.database.mongo.port);
+
+const server = new Application().getApp();
+
+server.listen(config.server.port, () => {
+  console.log(`Server on port ${config.server.port}`);
+});
