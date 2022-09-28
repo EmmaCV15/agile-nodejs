@@ -19,4 +19,15 @@ export class Database {
         console.log(`Running database on port ${mongo.port}`);
       });
   }
+
+  public async getDatabaseToTest(port: number) {
+    return await this.database.connect(
+      `mongodb://${mongo.user}:${mongo.password}@${mongo.host}:${port}/${mongo.database}`,
+      {}
+    );
+  }
+
+  public async disconnect() {
+    await this.database.disconnect();
+  }
 }
