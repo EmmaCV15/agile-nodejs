@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Application } from "./shared/infrastructure/server/express.server";
 import config from "./shared/infrastructure/config";
 import { Database } from "./shared/infrastructure/database/mongo.database";
